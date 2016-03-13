@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{719C17A4-9E7A-4F6E-A093-AC54B226FA8B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>dotRLGlueCodec</RootNamespace>
+    <AssemblyName>dotRLGlueCodec</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgentInterface.cs" />
+    <Compile Include="EnvironmentInterface.cs" />
+    <Compile Include="Network\ClientExperiment.cs" />
+    <Compile Include="Network\BigEndianBitConverter.cs" />
+    <Compile Include="Network\ClientAgent.cs" />
+    <Compile Include="Network\ClientEnvironment.cs" />
+    <Compile Include="Network\EndianBinaryReader.cs" />
+    <Compile Include="Network\EndianBinaryWriter.cs" />
+    <Compile Include="Network\EndianBitConverter.cs" />
+    <Compile Include="Network\Endianness.cs" />
+    <Compile Include="Network\LittleEndianBitConverter.cs" />
+    <Compile Include="Network\RlGlueConnection.cs" />
+    <Compile Include="Network\RlGlueReceiver.cs" />
+    <Compile Include="Network\RlGlueSender.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ExperimentInterface.cs" />
+    <Compile Include="TaskSpec\ITaskSpecParser.cs" />
+    <Compile Include="TaskSpec\ITaskSpecStringEncoder.cs" />
+    <Compile Include="TaskSpec\TaskSpec.cs" />
+    <Compile Include="TaskSpec\TaskSpecBase.cs" />
+    <Compile Include="TaskSpec\TaskSpecParser.cs" />
+    <Compile Include="TaskSpec\TaskSpecStringEncoder.cs" />
+    <Compile Include="Types\Action.cs" />
+    <Compile Include="Types\Observation.cs" />
+    <Compile Include="Types\ObservationAction.cs" />
+    <Compile Include="Types\RewardObservationActionTerminal.cs" />
+    <Compile Include="Types\RewardObservationTerminal.cs" />
+    <Compile Include="Types\RLAbstractType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Licences\MiscUtilLicence.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licences\RLGlueJavaCodecLicence.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TaskSpec\Ranges\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LICENCE.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
